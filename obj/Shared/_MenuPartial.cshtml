@@ -1,0 +1,22 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    @if(UserManager.GetUserName(User).Equals("admin@gmail.com"  )){ // Password:Admin123.
+ 
+                      <li class="nav-item">
+                          <a class="nav-link text-dark" asp-area="" asp-controller="Nosotr" asp-action="Index">Nosotros</a>
+                        </li> 
+    }else{
+      
+    }
+}
+else
+{
+   
+    
+}
